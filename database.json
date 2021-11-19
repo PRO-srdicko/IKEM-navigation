@@ -62,7 +62,8 @@
             "id": 0,
             "from": 0,
             "to": 1,
-            "mobility": 0
+            "mobility": 0,
+            "message": "k pavilonu B"
         }
     ]
 }
