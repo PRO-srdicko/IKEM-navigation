@@ -1,0 +1,592 @@
+<html>
+
+<head>
+    <script src="https://unpkg.com/konva@8.3.0/konva.min.js"></script>
+    <meta charset="utf-8" />
+    <title>IKEM map editor for navigation</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #f0f0f0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        h3 {
+            display: inline;
+            padding: 10px;
+        }
+
+        button {
+            height: 29px;
+            cursor: pointer;
+            border: 2px solid gray;
+            border-radius: 8px;
+        }
+
+        button:hover {
+            filter: brightness(90%);
+        }
+
+        button:active {
+            filter: brightness(80%);
+        }
+
+        .overlay {
+            display: block;
+            /* Hidden by default */
+            position: fixed;
+            /* Stay in place */
+            z-index: 1;
+            /* Sit on top */
+            left: 0;
+            top: 10%;
+            width: 100%;
+            /* Full width */
+            height: 100%;
+            /* Full height */
+            pointer-events: none;
+        }
+
+        .modal {
+            display: none;
+            /* Hidden by default */
+            position: fixed;
+            /* Stay in place */
+            z-index: 1;
+            /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%;
+            /* Full width */
+            height: 100%;
+            /* Full height */
+            overflow: auto;
+            /* Enable scroll if needed */
+            background-color: rgb(0, 0, 0);
+            /* Fallback color */
+            background-color: rgba(0, 0, 0, 0.4);
+            /* Black w/ opacity */
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            /* 15% from the top and centered */
+            padding: 20px;
+            border: 1px solid #888;
+            width: 60%;
+            min-width: 500px;
+            /* Could be more or less, depending on screen size */
+            border-radius: 10px;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            border: 3px solid gray;
+            padding: 10px;
+            border-radius: 12px;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="desc" style="background: rgb(212, 212, 212); padding: 4px; -webkit-box-shadow: 0px -2px 28px 0px #707070; 
+    box-shadow: 0px -2px 28px 0px #707070; cursor: default; user-select: none;">
+        <div>
+            <h3>IKEM map editor</h3>
+            <button id="snap" onclick="swapSnap(this)">Snap to grid</button>
+            <div style="display: inline-block; width: 20px;"></div>
+            <button name="toggleTools" onclick="selectTool(this, -1)">Configurate</button>
+            <button name="toggleTools" onclick="selectTool(this, 0)">Add point</button>
+            <button name="toggleTools" onclick="selectTool(this, 1)">Add line</button>
+            <button name="toggleTools" onclick="selectTool(this, 2)">Remove</button>
+            <div style="display: inline-block; width: 20px;"></div>
+            <button onclick="save()">Save</button>
+            <button onclick="load()">Load</button>
+            <button onclick="clearCanvas()">Clear</button>
+            <div style="display: inline-block; width: 20px;"></div>
+            <div style="display: inline-block; width: 20px;"></div>
+            Floor:
+            <input type="number" id="floor" style="width: 40px; font-size: 16px;" onchange="changeFloor(this)"
+                value="1">
+        </div>
+    </div>
+    <div id="container"></div>
+    <div id="overlay" class="overlay">
+        <div style="max-height: 24px;">
+            <div style="color: gray; font-size: 24px; display: inline-block;"><b>•</b></div> Corridor
+        </div>
+        <div style="max-height: 24px;">
+            <div style="color: salmon; font-size: 24px; display: inline-block;"><b>•</b></div> Door
+        </div>
+        <div style="max-height: 24px;">
+            <div style="color: slateblue; font-size: 24px; display: inline-block;"><b>•</b></div> Elevator
+        </div>
+    </div>
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">
+                <div id=modalSaveMessage></div>
+            </span>
+            <div id="modalPointConfig">
+                <p>Type: <select name="modalType" id="modalType" onchange="updateType(this)" style="font-size: 16px;">
+                        <option value="0">Corridor</option>
+                        <option value="1">Door</option>
+                        <option value="2">Elevator</option>
+                    </select></p>
+                <p id="modalElevatorConfig">Elevator group: <input type="number" value="-1" onchange="updateElevator(this)" style="width: 70px;">
+                <p>Point description: <input type="text" id="modalPointDescription" onchange="updatePointDescription(this)" style="width: 250px"></p>
+                </p>
+            </div>
+            <div id="modalLineConfig">
+                <p>Direction 1 description: <input type="text" id="modalLineDescription1" onchange="updateLineDescription(this, 0)" style="width: 250px"></p>
+                <p>Direction 2 description: <input type="text" id="modalLineDescription2" onchange="updateLineDescription(this, 1)" style="width: 250px"></p>
+            </div>
+        </div>
+    </div>
+    <script>
+        var width = window.innerWidth;
+        var height = window.innerHeight;
+
+        //UI
+
+        var blockSnapSize = 10;
+        var snap = false;
+        function swapSnap(btn) {
+            snap = !snap;
+            if (snap)
+                btn.style.backgroundColor = "yellowgreen";
+            else
+                btn.style.backgroundColor = "";
+        }
+        swapSnap(document.getElementById("snap"));
+        document.getElementsByName("toggleTools")[0].style.backgroundColor = "yellowgreen";
+
+        var points = [];
+        var lines = [];
+
+        function save() {
+            output = {};
+
+            exportPoints = {};
+            for (var x = 0; x < points.length; x++) {
+                point = {
+                    "id": points[x]["id"],
+                    "coords": [points[x]["point"].x(), points[x]["point"].y(), points[x]["point"]["z"]],
+                    "type": points[x]["point"]["type"],
+                    "d": points[x]["point"]["d"],
+                    "e": points[x]["point"]["elevator"]
+                };
+                exportPoints[points[x]["id"]] = point;
+            }
+            output["points"] = exportPoints;
+
+            exportLines = {};
+            for (var x = 0; x < lines.length; x++) {
+                line = {
+                    "id": lines[x]["id"],
+                    "from": lines[x]["obj"][0]["id"],
+                    "to": lines[x]["obj"][1]["id"],
+                    "d1": lines[x]["line"]["d1"],
+                    "d2": lines[x]["line"]["d2"],
+                    "mobility": 0
+                };
+                exportLines[lines[x]["id"]] = line;
+            }
+            output["lines"] = exportLines;
+
+            console.log(output);
+        }
+        function load() {
+            //alert("Data loaded!");
+        }
+        function clearCanvas() {
+            for (i = 0; i < points.length; i++) {
+                points[i]["point"].destroy();
+                points[i]["tooltip"].destroy();
+            }
+            for (i = 0; i < lines.length; i++) {
+                lines[i]["line"].destroy();
+            }
+            points = [];
+            lines = [];
+        }
+
+        // RENRERER
+
+        var stage = new Konva.Stage({
+            container: 'container',
+            width: width,
+            height: height,
+            draggable: true,
+        });
+
+        var layer = new Konva.Layer();
+        stage.add(layer);
+
+        //Floors
+
+        floor = 1;
+        function changeFloor(e) {
+            floor = e.value;
+            for (i = 0; i < points.length; i++) {
+                if (points[i]["point"]["z"] == floor) {
+                    points[i]["point"].show();
+                    points[i]["tooltip"].show();
+                } else {
+                    points[i]["point"].hide();
+                    points[i]["tooltip"].hide();
+                }
+            }
+            for (i = 0; i < lines.length; i++) {
+                if (lines[i]["obj"][0]["z"] == floor) {
+                    lines[i]["line"].show();
+                } else {
+                    lines[i]["line"].hide();
+                }
+            }
+            swapBg();
+        }
+
+        //AnchorPoints
+
+        nextAnchorID = 0;
+        nextLineID = 0;
+        defaultType = 0;
+
+        function buildAnchor(x, y) {
+            var myid = nextAnchorID;
+            nextAnchorID += 1;
+            var anchor = new Konva.Circle({
+                x: x,
+                y: y,
+                radius: 20,
+                stroke: '#666',
+                fill: '#ddd',
+                strokeWidth: 2,
+                draggable: true,
+            });
+            var text = new Konva.Text({
+                x: x + 24,
+                y: y - 13,
+                text: String(myid),
+                fontSize: 30,
+                fontFamily: 'Calibri',
+                fill: 'red'
+            });
+
+            anchor["id"] = myid;
+            anchor["z"] = parseInt(floor);
+            anchor["type"] = defaultType;
+            anchor["d"] = "";
+            anchor["elevator"] = -1;
+            anchor.on('click', function () {
+                if (tool == -1) {
+                    openConfigModal(anchor, myid, 0);
+                }
+                if (tool == 2) {
+                    firstsel = null;
+                    //anchor.destroy();
+                    for (i = 0; i < points.length; i++) {
+                        if (points[i]["id"] == anchor["id"]) {
+                            points[i]["point"].destroy();
+                            points[i]["tooltip"].destroy();
+                            points.splice(i, 1);
+                            console.log(lines);
+                            for (var x = 0; x < lines.length;) {
+                                if (lines[x]["obj"][0]["id"] == anchor["id"] || lines[x]["obj"][1]["id"] == anchor["id"]) {
+                                    deleteLine(lines[x]["id"]);
+                                } else {
+                                    x++;
+                                }
+                            }
+                        }
+                    }
+                } else if (tool == 1) {
+                    if (firstsel != null) {
+                        var obj = [firstsel, anchor];
+                        addLine(obj);
+                        firstsel = null;
+                    } else {
+                        firstsel = anchor;
+                    }
+                } else {
+                    firstsel = null;
+                }
+            });
+            layer.add(anchor);
+            backgroundGroup.add(text);
+            anchor.on('mouseover', function () {
+                document.body.style.cursor = 'pointer';
+                this.strokeWidth(4);
+            });
+            anchor.on('mouseout', function () {
+                document.body.style.cursor = 'default';
+                this.strokeWidth(2);
+            });
+
+            function snapPoint(anchor) {
+                if (!snap) { return; }
+                anchor.position({
+                    x: Math.round(anchor.x() / blockSnapSize) * blockSnapSize,
+                    y: Math.round(anchor.y() / blockSnapSize) * blockSnapSize
+                });
+                text.position({ x: anchor.x() + 24, y: anchor.y() - 15 });
+            }
+
+            anchor.on('dragmove', function () {
+                snapPoint(anchor);
+                renderLines();
+            });
+
+
+            points.push({ "id": myid, "point": anchor, "tooltip": text });
+        }
+
+        function updateAnchorColour() {
+            for (i = 0; i < points.length; i++) {
+                if (points[i]["point"]["type"] == 1) {
+                    points[i]["point"].fill("salmon");
+                }
+                else if (points[i]["point"]["type"] == 2) {
+                    points[i]["point"].fill("slateblue");
+                }
+            }
+        }
+
+        //Configuration modal
+
+        selectedElement = null;
+        selectedType = null;
+        var modal = document.getElementById("modal");
+        var span = document.getElementsByClassName("close")[0];
+        function openConfigModal(e, id, type) {
+            selectedType = type; //TODO ADD LINES SUPPORT CO CONFIGURE COMMENTS
+            selectedElement = id;
+            if (selectedType == 0){
+                document.getElementById("modalPointConfig").style.display = "block";
+                document.getElementById("modalLineConfig").style.display = "none";
+                document.getElementById("modalSaveMessage").innerHTML = "Edit point " + String(id);
+                document.getElementById("modalType").value = points[id]["point"]["type"];
+                document.getElementById("modalElevatorConfig").value = points[id]["point"]["elevator"];
+                document.getElementById("modalPointDescription").value = points[id]["point"]["d"];
+                allowElevatorEdit();
+            } else {
+                document.getElementById("modalPointConfig").style.display = "none";
+                document.getElementById("modalLineConfig").style.display = "block";
+                document.getElementById("modalSaveMessage").innerHTML = "Edit line " + String(id);
+                document.getElementById("modalLineDescription1").value = lines[id]["line"]["d1"];
+                document.getElementById("modalLineDescription2").value = lines[id]["line"]["d2"];
+                
+            }
+            modal.style.display = "block";
+        }
+        span.onclick = function () {
+            modal.style.display = "none";
+            updateAnchorColour();
+        }
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+                updateAnchorColour();
+            }
+        }
+        function allowElevatorEdit(){
+            if (document.getElementById("modalType").value == 2){
+                document.getElementById("modalElevatorConfig").style.display = "block";
+            } else {
+                document.getElementById("modalElevatorConfig").style.display = "none";
+            }
+        }
+        function updateType(e) {
+            if (selectedElement == null) return;
+            points[selectedElement]["point"]["type"] = parseInt(e.value);
+            allowElevatorEdit();
+        }
+        function updateElevator(e) {
+            if (selectedElement == null) return;
+            points[selectedElement]["point"]["elevator"] = parseInt(e.value);
+        }
+        function updatePointDescription(e) {
+            if (selectedElement == null) return;
+            points[selectedElement]["point"]["d"] = e.value;
+
+        }
+        function updateLineDescription(e, m) {
+            if (selectedElement == null) return;
+            if (m == 0){
+                lines[selectedElement]["line"]["d1"] = e.value;
+            } else {
+                lines[selectedElement]["line"]["d2"] = e.value;
+            }
+        }
+
+        //Background
+
+        var backgroundGroup = new Konva.Group({
+        });
+        layer.add(backgroundGroup);
+
+        Konva.Image.fromURL = function (url, callback) {
+            var img = new Image();
+            img.onload = function () {
+                var image = new Konva.Image({
+                    image: img
+                });
+                callback(image);
+            };
+            img.src = url;
+        };
+        var bgImage;
+        Konva.Image.fromURL('./bg1.svg', (image) => {
+            backgroundGroup.add(image);
+            image.setAttrs({
+                width: image.width() * 50,
+                height: image.height() * 50,
+                x: -1 * image.width() * 20,
+                y: -1 * image.height() * 20,
+                opacity: 0.3
+            });
+            bgImage = image;
+        });
+        function swapBg(){
+            var bg = document.getElementById("floor").value;
+            var bgpath = "./bg" + String(bg) + ".svg";
+            Konva.Image.fromURL(bgpath, (image) => {
+                bgImage.destroy();
+                backgroundGroup.add(image);
+                image.setAttrs({
+                    width: image.width() * 50,
+                    height: image.height() * 50,
+                    x: -1 * image.width() * 20,
+                    y: -1 * image.height() * 20,
+                opacity: 0.3
+            });
+                bgImage = image;
+            });
+
+
+        }
+
+        //Lines between points
+
+        var linesGroup = new Konva.Group({});
+        layer.add(linesGroup);
+
+        function deleteLine(lineId) {
+            for (i = 0; i < lines.length; i++) {
+                if (lines[i]["id"] == lineId) {
+                    lines[i]["line"].destroy();
+                    lines.splice(i, 1);
+                    break;
+                }
+            }
+        }
+
+        function addLine(obj) {
+            var myid = nextLineID;
+            nextLineID += 1;
+            var line = new Konva.Line({
+                points: [obj[0].x(), obj[0].y(), obj[1].x(), obj[1].y()],
+                stroke: 'gray',
+                strokeWidth: 6,
+                lineCap: 'round',
+                lineJoin: 'round',
+                dash: [29, 20, 0.001, 20],
+            });
+            line["id"] = myid;
+            line["d1"] = "";
+            line["d2"] = "";
+
+            line.on('mouseover', function () {
+                document.body.style.cursor = 'pointer';
+                this.strokeWidth(8);
+            });
+            line.on('mouseout', function () {
+                document.body.style.cursor = 'default';
+                this.strokeWidth(6);
+            });
+            line.on('click', function () {
+                if (tool == -1) {
+                    openConfigModal(line, myid, 1);
+                }
+                if (tool == 2) {
+                    deleteLine(line["id"]);
+                }
+            });
+
+            linesGroup.add(line);
+
+            lines.push({ "obj": obj, "id": myid, "line": line });
+            return (line);
+        }
+
+        function renderLines() {
+            for (var x = 0; x < lines.length; x++) {
+                var l = lines[x];
+                var obj = l["obj"];
+                var line = l["line"];
+                line.points([obj[0].x(), obj[0].y(), obj[1].x(), obj[1].y()]);
+            }
+        }
+
+        //Toolbox
+
+        firstsel = null;
+        tool = -1;
+        function selectTool(e, t) {
+            tool = t;
+            document.getElementsByName("toggleTools").forEach(element => element.style.backgroundColor = "");
+            e.style.backgroundColor = "yellowgreen";
+        }
+
+        stage.on('click', function () {
+            if (tool == 0) {
+                var pos = layer.getRelativePointerPosition();
+                var x = Math.round(pos.x / blockSnapSize) * blockSnapSize;
+                var y = Math.round(pos.y / blockSnapSize) * blockSnapSize;
+                buildAnchor(x, y);
+            }
+        });
+
+        //Zoomin
+
+        var scaleBy = 1.1;
+        stage.on('wheel', (e) => {
+            e.evt.preventDefault();
+            var oldScale = stage.scaleX();
+
+            var pointer = stage.getPointerPosition();
+
+            var mousePointTo = {
+                x: (pointer.x - stage.x()) / oldScale,
+                y: (pointer.y - stage.y()) / oldScale,
+            };
+
+            var newScale = -1 * (e.evt.deltaY) > 0 ? oldScale * scaleBy : oldScale / scaleBy;
+
+            stage.scale({ x: newScale, y: newScale });
+
+            var newPos = {
+                x: pointer.x - mousePointTo.x * newScale,
+                y: pointer.y - mousePointTo.y * newScale,
+            };
+            stage.position(newPos);
+        });
+
+    </script>
+</body>
+
+</html>
