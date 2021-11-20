@@ -1,0 +1,70 @@
+{
+    "point_types": [
+        "corridor",
+        "door",
+        "elevator"
+    ],
+    "mobility_types": [
+        "no_restrictions",
+        "steep_incline",
+        "stairs"
+    ],
+    "points": [
+        {
+            "id": 0,
+            "coords": [
+                0,
+                0,
+                2
+            ],
+            "type": 0,
+            "description": "Main entrance"
+        },
+        {
+            "id": 10,
+            "coords": [
+                0,
+                10,
+                2
+            ],
+            "type": 1,
+            "description": "Behind the reception"
+        },
+        {
+            "id": 11,
+            "coords": [
+                10,
+                10,
+                2
+            ],
+            "type": 2
+        },
+        {
+            "id": 12,
+            "coords": [
+                20,
+                10,
+                2
+            ],
+            "type": 1
+        },
+        {
+            "id": 13,
+            "coords": [
+                20,
+                15,
+                2
+            ],
+            "type": 3
+        }
+    ],
+    "path": [
+        {
+            "id": 0,
+            "from": 0,
+            "to": 1,
+            "mobility": 0,
+            "description": "k pavilonu B"
+        }
+    ]
+}
