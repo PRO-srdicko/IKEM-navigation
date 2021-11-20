@@ -1,0 +1,1106 @@
+{
+      "A_1001": {
+            "Budova": "A",
+            "Patro": "1NP",
+            "Nazev": "AKUTNÍ PŘÍJEM",
+            "Cislo": "A 1001"
+      },
+      "A_1001-01": {
+            "Budova": null,
+            "Patro": null,
+            "Nazev": null,
+            "Cislo": "A 1001-01"
+      },
+      "A_1001-02": {
+            "Budova": null,
+            "Patro": null,
+            "Nazev": null,
+            "Cislo": "A 1001-02"
+      },
+      "A_1002": {
+            "Budova": "A",
+            "Patro": "1NP",
+            "Nazev": "CHODBA",
+            "Cislo": "A 1002"
+      },
+      "A_1002a": {
+            "Budova": "A",
+            "Patro": "1NP",
+            "Nazev": "PŘEDSÍŇ",
+            "Cislo": "A 1002a"
+      },
+      "A_1002a-01": {
+            "Budova": null,
+            "Patro": null,
+            "Nazev": null,
+            "Cislo": "A 1002a-01"
+      },
+      "A_1002a-02": {
+            "Budova": null,
+            "Patro": null,
+            "Nazev": null,
+            "Cislo": "A 1002a-02"
+      },
+      "A_1002b": {
+            "Budova": "A",
+            "Patro": "1NP",
+            "Nazev": "KANC. VED. DOPRAVY",
+            "Cislo": "A 1002b"
+      },
+      "A_1002c": {
+            "Budova": "A",
+            "Patro": "1NP",
+            "Nazev": "ŠATNA",
+            "Cislo": "A 1002c"
+      },
+      "A_1002d": {
+            "Budova": "A",
+            "Patro": "1NP",
+            "Nazev": "MONITORY",
+            "Cislo": "A 1002d"
+      },
+      "A_1003": {
+            "Budova": "A",
+            "Patro": "1NP",
+            "Nazev": "DENNÍ MÍSTNOST",
+            "Cislo": "A 1003"
+      },
+      "A_1004": {
+            "Budova": "A",
+            "Patro": "1NP",
+            "Nazev": "CHODBA",
+            "Cislo": "A 1004"
+      },
+      "A_1005": {
+            "Budova": "A",
+            "Patro": "1NP",
+            "Nazev": "HALA PŘED VÝTAHY",
+            "Cislo": "A 1005"
+      },
+      "A_1005a": {
+            "Budova": "A",
+            "Patro": "1NP",
+            "Nazev": "SCHODIŠTĚ",
+            "Cislo": "A 1005a"
+      },
+      "A_1005b": {
+            "Budova": "A",
+            "Patro": "1NP",
+            "Nazev": "ROZVODNA",
+            "Cislo": "A 1005b"
+      },
+      "A_1005c": {
+            "Budova": "A",
+            "Patro": "1NP",
+            "Nazev": "ROZVODNA TC",
+            "Cislo": "A 1005c"
+      },
+      "A_1006": {
+            "Budova": "A",
+            "Patro": "1NP",
+            "Nazev": "LÉKAŘSKÝ POKOJ",
+            "Cislo": "A 1006"
+      },
+      "A_1007": {
+            "Budova": "A",
+            "Patro": "1NP",
+            "Nazev": "LÉKAŘSKÝ POKOJ",
+            "Cislo": "A 1007"
+      },
+      "A_1008": {
+            "Budova": "A",
+            "Patro": "1NP",
+            "Nazev": "TECHNICI",
+            "Cislo": "A 1008"
+      },
+      "A_1009": {
+            "Budova": "A",
+            "Patro": "1NP",
+            "Nazev": "WC UMÝVÁRNA",
+            "Cislo": "A 1009"
+      },
+      "A_1009a": {
+            "Budova": "A",
+            "Patro": "1NP",
+            "Nazev": "WC",
+            "Cislo": "A 1009a"
+      },
+      "A_1009b": {
+            "Budova": "A",
+            "Patro": "1NP",
+            "Nazev": "WC",
+            "Cislo": "A 1009b"
+      },
+      "A_1010": {
+            "Budova": "A",
+            "Patro": "1NP",
+            "Nazev": "WC IMOBILNÍ",
+            "Cislo": "A 1010"
+      },
+      "A_1011": {
+            "Budova": "A",
+            "Patro": "1NP",
+            "Nazev": "ÚKLID",
+            "Cislo": "A 1011"
+      },
+      "A_1012": {
+            "Budova": "A",
+            "Patro": "1NP",
+            "Nazev": "WC UMÝVÁRNA",
+            "Cislo": "A 1012"
+      },
+      "A_1012a": {
+            "Budova": "A",
+            "Patro": "1NP",
+            "Nazev": "WC PISOÁR",
+            "Cislo": "A 1012a"
+      },
+      "A_1012b": {
+            "Budova": "A",
+            "Patro": "1NP",
+            "Nazev": "WC",
+            "Cislo": "A 1012b"
+      },
+      "A_1012c": {
+            "Budova": "A",
+            "Patro": "1NP",
+            "Nazev": "WC",
+            "Cislo": "A 1012c"
+      },
+      "A_1013": {
+            "Budova": null,
+            "Patro": null,
+            "Nazev": null,
+            "Cislo": "A 1013"
+      },
+      "A_1014": {
+            "Budova": "A",
+            "Patro": "1NP",
+            "Nazev": "ČEKÁRNA UP",
+            "Cislo": "A 1014"
+      },
+      "A_1014-01": {
+            "Budova": null,
+            "Patro": null,
+            "Nazev": null,
+            "Cislo": "A 1014-01"
+      },
+      "A_1014-02": {
+            "Budova": null,
+            "Patro": null,
+            "Nazev": null,
+            "Cislo": "A 1014-02"
+      },
+      "A_1015": {
+            "Budova": "A",
+            "Patro": "1NP",
+            "Nazev": "WC PERSONÁL",
+            "Cislo": "A 1015"
+      },
+      "A_1016": {
+            "Budova": "A",
+            "Patro": "1NP",
+            "Nazev": "ÚKLID",
+            "Cislo": "A 1016"
+      },
+      "A_1017": {
+            "Budova": "A",
+            "Patro": "1NP",
+            "Nazev": "SKLAD MATERIÁLU",
+            "Cislo": "A 1017"
+      },
+      "A_1018": {
+            "Budova": "A",
+            "Patro": "1NP",
+            "Nazev": "ODPOČINKOVÁ MÍSTNOST",
+            "Cislo": "A 1018"
+      },
+      "A_1019": {
+            "Budova": "A",
+            "Patro": "1NP",
+            "Nazev": "VYŠETŘOVNA URGENTNÍHO PŘÍJMU",
+            "Cislo": "A 1019"
+      },
+      "A_1020": {
+            "Budova": "A",
+            "Patro": "1NP",
+            "Nazev": "PŘÍPRAVNA",
+            "Cislo": "A 1020"
+      },
+      "A_1021": {
+            "Budova": "A",
+            "Patro": "1NP",
+            "Nazev": "ČISTÍCÍ MÍSTNOST",
+            "Cislo": "A 1021"
+      },
+      "A_1022": {
+            "Budova": null,
+            "Patro": null,
+            "Nazev": null,
+            "Cislo": "A 1022"
+      },
+      "A_1023": {
+            "Budova": null,
+            "Patro": null,
+            "Nazev": null,
+            "Cislo": "A 1023"
+      },
+      "A_1023a": {
+            "Budova": null,
+            "Patro": null,
+            "Nazev": null,
+            "Cislo": "A 1023a"
+      },
+      "A_1024": {
+            "Budova": null,
+            "Patro": null,
+            "Nazev": null,
+            "Cislo": "A 1024"
+      },
+      "A_1026": {
+            "Budova": "A",
+            "Patro": "1NP",
+            "Nazev": "HALA PŘED VÝTAHY",
+            "Cislo": "A 1026"
+      },
+      "A_1026a": {
+            "Budova": "A",
+            "Patro": "1NP",
+            "Nazev": "TC",
+            "Cislo": "A 1026a"
+      },
+      "A_1026b": {
+            "Budova": "A",
+            "Patro": "1NP",
+            "Nazev": "ROZVODNA",
+            "Cislo": "A 1026b"
+      },
+      "A_1026c": {
+            "Budova": "A",
+            "Patro": "1NP",
+            "Nazev": "SCHODIŠTĚ",
+            "Cislo": "A 1026c"
+      },
+      "A_1026c-01": {
+            "Budova": null,
+            "Patro": null,
+            "Nazev": null,
+            "Cislo": "A 1026c-01"
+      },
+      "A_1026c-02": {
+            "Budova": null,
+            "Patro": null,
+            "Nazev": null,
+            "Cislo": "A 1026c-02"
+      },
+      "A_1027": {
+            "Budova": "A",
+            "Patro": "1NP",
+            "Nazev": "VÝTAHOVÁ ŠACHTA",
+            "Cislo": "A 1027"
+      },
+      "A_1028": {
+            "Budova": "A",
+            "Patro": "1NP",
+            "Nazev": "VÝTAHOVÁ ŠACHTA",
+            "Cislo": "A 1028"
+      },
+      "A_1029": {
+            "Budova": "A",
+            "Patro": "1NP",
+            "Nazev": "VÝTAHOVÁ ŠACHTA",
+            "Cislo": "A 1029"
+      },
+      "A_1030": {
+            "Budova": "A",
+            "Patro": "1NP",
+            "Nazev": "VÝTAHOVÁ ŠACHTA",
+            "Cislo": "A 1030"
+      },
+      "A_2001": {
+            "Budova": "A",
+            "Patro": "2NP",
+            "Nazev": "VSTUPNÍ HALA",
+            "Cislo": "A 2001"
+      },
+      "A_2001-01": {
+            "Budova": null,
+            "Patro": null,
+            "Nazev": null,
+            "Cislo": "A 2001-01"
+      },
+      "A_2001-02": {
+            "Budova": null,
+            "Patro": null,
+            "Nazev": null,
+            "Cislo": "A 2001-02"
+      },
+      "A_2001-03": {
+            "Budova": null,
+            "Patro": null,
+            "Nazev": null,
+            "Cislo": "A 2001-03"
+      },
+      "A_2001a": {
+            "Budova": "A",
+            "Patro": "2NP",
+            "Nazev": "HALA NÁVŠTĚV",
+            "Cislo": "A 2001a"
+      },
+      "A_2001a-01": {
+            "Budova": null,
+            "Patro": null,
+            "Nazev": null,
+            "Cislo": "A 2001a-01"
+      },
+      "A_2001a-02": {
+            "Budova": null,
+            "Patro": null,
+            "Nazev": null,
+            "Cislo": "A 2001a-02"
+      },
+      "A_2001a-03": {
+            "Budova": null,
+            "Patro": null,
+            "Nazev": null,
+            "Cislo": "A 2001a-03"
+      },
+      "A_2001b": {
+            "Budova": "A",
+            "Patro": "2NP",
+            "Nazev": "TABÁK",
+            "Cislo": "A 2001b"
+      },
+      "A_2001c": {
+            "Budova": "A",
+            "Patro": "2NP",
+            "Nazev": "KVĚTINÁŘSTVÍ",
+            "Cislo": "A 2001c"
+      },
+      "A_2001d": {
+            "Budova": "A",
+            "Patro": "2NP",
+            "Nazev": "ZÁDVEŘÍ",
+            "Cislo": "A 2001d"
+      },
+      "A_2001d-01": {
+            "Budova": null,
+            "Patro": null,
+            "Nazev": null,
+            "Cislo": "A 2001d-01"
+      },
+      "A_2001d-02": {
+            "Budova": null,
+            "Patro": null,
+            "Nazev": null,
+            "Cislo": "A 2001d-02"
+      },
+      "A_2001d-03": {
+            "Budova": null,
+            "Patro": null,
+            "Nazev": null,
+            "Cislo": "A 2001d-03"
+      },
+      "A_2002": {
+            "Budova": "A",
+            "Patro": "2NP",
+            "Nazev": "KANCELÁŘ",
+            "Cislo": "A 2002"
+      },
+      "A_2002a": {
+            "Budova": "A",
+            "Patro": "2NP",
+            "Nazev": "KANCELÁŘ",
+            "Cislo": "A 2002a"
+      },
+      "A_2003": {
+            "Budova": "A",
+            "Patro": "2NP",
+            "Nazev": "HALA PŘED VÝTAHY",
+            "Cislo": "A 2003"
+      },
+      "A_2003a": {
+            "Budova": "A",
+            "Patro": "2NP",
+            "Nazev": "TC",
+            "Cislo": "A 2003a"
+      },
+      "A_2003b": {
+            "Budova": "A",
+            "Patro": "2NP",
+            "Nazev": "ROZVODNA",
+            "Cislo": "A 2003b"
+      },
+      "A_2003c": {
+            "Budova": "A",
+            "Patro": "2NP",
+            "Nazev": "SCHODIŠTĚ",
+            "Cislo": "A 2003c"
+      },
+      "A_2004": {
+            "Budova": "A",
+            "Patro": "2NP",
+            "Nazev": "CENTRÁLNÍ PŘÍJEM PACIENTŮ",
+            "Cislo": "A 2004"
+      },
+      "A_2004a": {
+            "Budova": "A",
+            "Patro": "2NP",
+            "Nazev": "KANCELÁŘ VEDOUCÍ CCP",
+            "Cislo": "A 2004a"
+      },
+      "A_2005": {
+            "Budova": "A",
+            "Patro": "2NP",
+            "Nazev": "ZÁZEMÍ RECEPCE",
+            "Cislo": "A 2005"
+      },
+      "A_2006": {
+            "Budova": "A",
+            "Patro": "2NP",
+            "Nazev": "LÉKÁRNA",
+            "Cislo": "A 2006"
+      },
+      "A_2007": {
+            "Budova": "A",
+            "Patro": "2NP",
+            "Nazev": "PŘEDSÍŇ",
+            "Cislo": "A 2007"
+      },
+      "A_2007a": {
+            "Budova": "A",
+            "Patro": "2NP",
+            "Nazev": "WC UMÝVÁRNA",
+            "Cislo": "A 2007a"
+      },
+      "A_2007b": {
+            "Budova": "A",
+            "Patro": "2NP",
+            "Nazev": "WC",
+            "Cislo": "A 2007b"
+      },
+      "A_2007c": {
+            "Budova": "A",
+            "Patro": "2NP",
+            "Nazev": "SCHODIŠTĚ",
+            "Cislo": "A 2007c"
+      },
+      "A_2008": {
+            "Budova": "A",
+            "Patro": "2NP",
+            "Nazev": "HALA PŘED VÝTAHY",
+            "Cislo": "A 2008"
+      },
+      "A_2008a": {
+            "Budova": "A",
+            "Patro": "2NP",
+            "Nazev": "SCHODIŠTĚ",
+            "Cislo": "A 2008a"
+      },
+      "A_2008b": {
+            "Budova": "A",
+            "Patro": "2NP",
+            "Nazev": "ROZVODNA",
+            "Cislo": "A 2008b"
+      },
+      "A_2008c": {
+            "Budova": "A",
+            "Patro": "2NP",
+            "Nazev": "ROZVODNA TC",
+            "Cislo": "A 2008c"
+      },
+      "A_2010": {
+            "Budova": "A",
+            "Patro": "2NP",
+            "Nazev": "LÉKAŘSKÝ POKOJ",
+            "Cislo": "A 2010"
+      },
+      "A_2010a": {
+            "Budova": "A",
+            "Patro": "2NP",
+            "Nazev": "WC, SPRCHA",
+            "Cislo": "A 2010a"
+      },
+      "A_2011": {
+            "Budova": "A",
+            "Patro": "2NP",
+            "Nazev": "LÉKAŘSKÝ POKOJ",
+            "Cislo": "A 2011"
+      },
+      "A_2011a": {
+            "Budova": "A",
+            "Patro": "2NP",
+            "Nazev": "UMÝVÁRNA, WC",
+            "Cislo": "A 2011a"
+      },
+      "A_2012": {
+            "Budova": "A",
+            "Patro": "2NP",
+            "Nazev": "VEDOUCÍ LABORATOŘE",
+            "Cislo": "A 2012"
+      },
+      "A_2012a": {
+            "Budova": "A",
+            "Patro": "2NP",
+            "Nazev": "WC, SPRCHA",
+            "Cislo": "A 2012a"
+      },
+      "A_2013": {
+            "Budova": "A",
+            "Patro": "2NP",
+            "Nazev": "PŘEDNOSTA",
+            "Cislo": "A 2013"
+      },
+      "A_2013-01": {
+            "Budova": null,
+            "Patro": null,
+            "Nazev": null,
+            "Cislo": "A 2013-01"
+      },
+      "A_2013-02": {
+            "Budova": null,
+            "Patro": null,
+            "Nazev": null,
+            "Cislo": "A 2013-02"
+      },
+      "A_2014": {
+            "Budova": "A",
+            "Patro": "2NP",
+            "Nazev": "SEKRETARIÁT",
+            "Cislo": "A 2014"
+      },
+      "A_2014a": {
+            "Budova": "A",
+            "Patro": "2NP",
+            "Nazev": "UMÝVÁRNA, WC",
+            "Cislo": "A 2014a"
+      },
+      "A_2015": {
+            "Budova": "A",
+            "Patro": "2NP",
+            "Nazev": "WC UMÝVÁRNA",
+            "Cislo": "A 2015"
+      },
+      "A_2015a": {
+            "Budova": "A",
+            "Patro": "2NP",
+            "Nazev": "WC",
+            "Cislo": "A 2015a"
+      },
+      "A_2016": {
+            "Budova": "A",
+            "Patro": "2NP",
+            "Nazev": "WC UMÝVÁRNA",
+            "Cislo": "A 2016"
+      },
+      "A_2016a": {
+            "Budova": "A",
+            "Patro": "2NP",
+            "Nazev": "WC",
+            "Cislo": "A 2016a"
+      },
+      "A_2017": {
+            "Budova": "A",
+            "Patro": "2NP",
+            "Nazev": "ÚKLID",
+            "Cislo": "A 2017"
+      },
+      "A_2018": {
+            "Budova": "A",
+            "Patro": "2NP",
+            "Nazev": "WC UMÝVÁRNA",
+            "Cislo": "A 2018"
+      },
+      "A_2018a": {
+            "Budova": "A",
+            "Patro": "2NP",
+            "Nazev": "WC PŘEDSÍŇ",
+            "Cislo": "A 2018a"
+      },
+      "A_2018b": {
+            "Budova": "A",
+            "Patro": "2NP",
+            "Nazev": "WC",
+            "Cislo": "A 2018b"
+      },
+      "A_2018c": {
+            "Budova": "A",
+            "Patro": "2NP",
+            "Nazev": "WC",
+            "Cislo": "A 2018c"
+      },
+      "A_2019": {
+            "Budova": "A",
+            "Patro": "2NP",
+            "Nazev": "WC IMOBOLNÍ",
+            "Cislo": "A 2019"
+      },
+      "A_2020": {
+            "Budova": "A",
+            "Patro": "2NP",
+            "Nazev": "WC UMÝVÁRNA",
+            "Cislo": "A 2020"
+      },
+      "A_2020a": {
+            "Budova": "A",
+            "Patro": "2NP",
+            "Nazev": "WC PISOÁRY",
+            "Cislo": "A 2020a"
+      },
+      "A_2020b": {
+            "Budova": "A",
+            "Patro": "2NP",
+            "Nazev": "WC",
+            "Cislo": "A 2020b"
+      },
+      "A_2020c": {
+            "Budova": "A",
+            "Patro": "2NP",
+            "Nazev": "WC",
+            "Cislo": "A 2020c"
+      },
+      "A_2021": {
+            "Budova": "A",
+            "Patro": "2NP",
+            "Nazev": "BANKOMAT",
+            "Cislo": "A 2021"
+      },
+      "A_2022": {
+            "Budova": "A",
+            "Patro": "2NP",
+            "Nazev": "VÝTAHOVÁ ŠACHTA",
+            "Cislo": "A 2022"
+      },
+      "A_2023": {
+            "Budova": "A",
+            "Patro": "2NP",
+            "Nazev": "VÝTAHOVÁ ŠACHTA",
+            "Cislo": "A 2023"
+      },
+      "A_2024": {
+            "Budova": "A",
+            "Patro": "2NP",
+            "Nazev": "VÝTAHOVÁ ŠACHTA",
+            "Cislo": "A 2024"
+      },
+      "A_2025": {
+            "Budova": "A",
+            "Patro": "2NP",
+            "Nazev": "VÝTAHOVÁ ŠACHTA",
+            "Cislo": "A 2025"
+      },
+      "A_2026": {
+            "Budova": "A",
+            "Patro": "2NP",
+            "Nazev": "VÝTAHOVÁ ŠACHTA",
+            "Cislo": "A 2026"
+      },
+      "A_3001": {
+            "Budova": "A",
+            "Patro": "3NP",
+            "Nazev": "CHODBA",
+            "Cislo": "A 3001"
+      },
+      "A_3001a": {
+            "Budova": "A",
+            "Patro": "3NP",
+            "Nazev": "ROZVODNA",
+            "Cislo": "A 3001a"
+      },
+      "A_3002": {
+            "Budova": "A",
+            "Patro": "3NP",
+            "Nazev": "OČNÍ AMBULANCE",
+            "Cislo": "A 3002"
+      },
+      "A_3003": {
+            "Budova": "A",
+            "Patro": "3NP",
+            "Nazev": "PŘEDSÍŇ",
+            "Cislo": "A 3003"
+      },
+      "A_3003a": {
+            "Budova": "A",
+            "Patro": "3NP",
+            "Nazev": "WC",
+            "Cislo": "A 3003a"
+      },
+      "A_3003b": {
+            "Budova": "A",
+            "Patro": "3NP",
+            "Nazev": "WC",
+            "Cislo": "A 3003b"
+      },
+      "A_3003c": {
+            "Budova": "A",
+            "Patro": "3NP",
+            "Nazev": "WC",
+            "Cislo": "A 3003c"
+      },
+      "A_3003d": {
+            "Budova": "A",
+            "Patro": "3NP",
+            "Nazev": "WC",
+            "Cislo": "A 3003d"
+      },
+      "A_3004": {
+            "Budova": "A",
+            "Patro": "3NP",
+            "Nazev": "ÚKLID",
+            "Cislo": "A 3004"
+      },
+      "A_3005": {
+            "Budova": "A",
+            "Patro": "3NP",
+            "Nazev": "PŘEDSÍŇ",
+            "Cislo": "A 3005"
+      },
+      "A_3005a": {
+            "Budova": "A",
+            "Patro": "3NP",
+            "Nazev": "WC",
+            "Cislo": "A 3005a"
+      },
+      "A_3005b": {
+            "Budova": "A",
+            "Patro": "3NP",
+            "Nazev": "WC",
+            "Cislo": "A 3005b"
+      },
+      "A_3005c": {
+            "Budova": "A",
+            "Patro": "3NP",
+            "Nazev": "WC",
+            "Cislo": "A 3005c"
+      },
+      "A_3005d": {
+            "Budova": "A",
+            "Patro": "3NP",
+            "Nazev": "WC",
+            "Cislo": "A 3005d"
+      },
+      "A_3006": {
+            "Budova": "A",
+            "Patro": "3NP",
+            "Nazev": "PODATELNA",
+            "Cislo": "A 3006"
+      },
+      "A_3007": {
+            "Budova": "A",
+            "Patro": "3NP",
+            "Nazev": "KANCELÁŘ POKLADNY",
+            "Cislo": "A 3007"
+      },
+      "A_3008": {
+            "Budova": "A",
+            "Patro": "3NP",
+            "Nazev": "SKLAD",
+            "Cislo": "A 3008"
+      },
+      "A_3009": {
+            "Budova": "A",
+            "Patro": "3NP",
+            "Nazev": "POKLADNA VÝDEJ",
+            "Cislo": "A 3009"
+      },
+      "A_3009a": {
+            "Budova": "A",
+            "Patro": "3NP",
+            "Nazev": "POKLADNA",
+            "Cislo": "A 3009a"
+      },
+      "A_3010": {
+            "Budova": "A",
+            "Patro": "3NP",
+            "Nazev": "HALA PŘED VÝTAHY",
+            "Cislo": "A 3010"
+      },
+      "A_3010a": {
+            "Budova": "A",
+            "Patro": "3NP",
+            "Nazev": "TC",
+            "Cislo": "A 3010a"
+      },
+      "A_3010b": {
+            "Budova": "A",
+            "Patro": "3NP",
+            "Nazev": "ROZVODNA",
+            "Cislo": "A 3010b"
+      },
+      "A_3010c": {
+            "Budova": "A",
+            "Patro": "3NP",
+            "Nazev": "SCHODIŠTĚ",
+            "Cislo": "A 3010c"
+      },
+      "A_3011": {
+            "Budova": "A",
+            "Patro": "3NP",
+            "Nazev": "PŘEDSÍŇ",
+            "Cislo": "A 3011"
+      },
+      "A_3011a": {
+            "Budova": "A",
+            "Patro": "3NP",
+            "Nazev": "ZASEDACÍ MÍSTNOST",
+            "Cislo": "A 3011a"
+      },
+      "A_3011b": {
+            "Budova": "A",
+            "Patro": "3NP",
+            "Nazev": "SKLAD",
+            "Cislo": "A 3011b"
+      },
+      "A_3012": {
+            "Budova": "A",
+            "Patro": "3NP",
+            "Nazev": "ŠATNA",
+            "Cislo": "A 3012"
+      },
+      "A_3012a": {
+            "Budova": "A",
+            "Patro": "3NP",
+            "Nazev": "ZASEDACÍ MÍSTNOST",
+            "Cislo": "A 3012a"
+      },
+      "A_3012a-01": {
+            "Budova": null,
+            "Patro": null,
+            "Nazev": null,
+            "Cislo": "A 3012a-01"
+      },
+      "A_3012a-02": {
+            "Budova": null,
+            "Patro": null,
+            "Nazev": null,
+            "Cislo": "A 3012a-02"
+      },
+      "A_3012b": {
+            "Budova": "A",
+            "Patro": "3NP",
+            "Nazev": "PŘEDSÍŇ",
+            "Cislo": "A 3012b"
+      },
+      "A_3013": {
+            "Budova": "A",
+            "Patro": "3NP",
+            "Nazev": "KONZULTAČNÍ MÍSTNOST",
+            "Cislo": "A 3013"
+      },
+      "A_3013a": {
+            "Budova": "A",
+            "Patro": "3NP",
+            "Nazev": "CHODBA",
+            "Cislo": "A 3013a"
+      },
+      "A_3013b": {
+            "Budova": "A",
+            "Patro": "3NP",
+            "Nazev": "PŘEDSÍŇ",
+            "Cislo": "A 3013b"
+      },
+      "A_3013c": {
+            "Budova": "A",
+            "Patro": "3NP",
+            "Nazev": "KANCELÁŘ VEDOUCÍHO PRACOVNÍKA",
+            "Cislo": "A 3013c"
+      },
+      "A_3013d": {
+            "Budova": "A",
+            "Patro": "3NP",
+            "Nazev": "ODPOČINKOVÁ MÍSTNOST",
+            "Cislo": "A 3013d"
+      },
+      "A_3013e": {
+            "Budova": "A",
+            "Patro": "3NP",
+            "Nazev": "UMÝVÁRNA",
+            "Cislo": "A 3013e"
+      },
+      "A_3013f": {
+            "Budova": "A",
+            "Patro": "3NP",
+            "Nazev": "PERSONÁLNÍ PROPUST",
+            "Cislo": "A 3013f"
+      },
+      "A_3013i": {
+            "Budova": "A",
+            "Patro": "3NP",
+            "Nazev": "MATERIÁLNÍ PROPUST",
+            "Cislo": "A 3013i"
+      },
+      "A_3013j": {
+            "Budova": "A",
+            "Patro": "3NP",
+            "Nazev": "PŘÍPRAVNA",
+            "Cislo": "A 3013j"
+      },
+      "A_3014": {
+            "Budova": "A",
+            "Patro": "3NP",
+            "Nazev": "HALA PŘED VÝTAHY",
+            "Cislo": "A 3014"
+      },
+      "A_3014a": {
+            "Budova": "A",
+            "Patro": "3NP",
+            "Nazev": "SCHODIŠTĚ",
+            "Cislo": "A 3014a"
+      },
+      "A_3014b": {
+            "Budova": "A",
+            "Patro": "3NP",
+            "Nazev": "ROZVODNA",
+            "Cislo": "A 3014b"
+      },
+      "A_3014c": {
+            "Budova": "A",
+            "Patro": "3NP",
+            "Nazev": "ROZVODNA TC",
+            "Cislo": "A 3014c"
+      },
+      "A_3015": {
+            "Budova": "A",
+            "Patro": "3NP",
+            "Nazev": "VÝTAHOVÁ ŠACHTA",
+            "Cislo": "A 3015"
+      },
+      "A_3016": {
+            "Budova": "A",
+            "Patro": "3NP",
+            "Nazev": "VÝTAHOVÁ ŠACHTA",
+            "Cislo": "A 3016"
+      },
+      "A_3017": {
+            "Budova": "A",
+            "Patro": "3NP",
+            "Nazev": "VÝTAHOVÁ ŠACHTA",
+            "Cislo": "A 3017"
+      },
+      "A_3018": {
+            "Budova": "A",
+            "Patro": "3NP",
+            "Nazev": "VÝTAHOVÁ ŠACHTA",
+            "Cislo": "A 3018"
+      },
+      "A_3019": {
+            "Budova": "A",
+            "Patro": "3NP",
+            "Nazev": "VÝTAHOVÁ ŠACHTA",
+            "Cislo": "A 3019"
+      },
+      "C_2001": {
+            "Budova": "C",
+            "Patro": "2NP",
+            "Nazev": "CHODBA",
+            "Cislo": "C 2001"
+      },
+      "C_2002a": {
+            "Budova": "C",
+            "Patro": "2NP",
+            "Nazev": "KANCELÁŘ",
+            "Cislo": "C 2002a"
+      },
+      "C_2004": {
+            "Budova": "C",
+            "Patro": "2NP",
+            "Nazev": "PRODEJNA ZDRAV.POT.",
+            "Cislo": "C 2004"
+      },
+      "C_2004a": {
+            "Budova": "C",
+            "Patro": "2NP",
+            "Nazev": "CHODBA",
+            "Cislo": "C 2004a"
+      },
+      "C_2004b": {
+            "Budova": "C",
+            "Patro": "2NP",
+            "Nazev": "SKLAD",
+            "Cislo": "C 2004b"
+      },
+      "C_3001": {
+            "Budova": "C",
+            "Patro": "3NP",
+            "Nazev": "CHODBA",
+            "Cislo": "C 3001"
+      },
+      "C_3002": {
+            "Budova": "C",
+            "Patro": "3NP",
+            "Nazev": "SEKRETARIÁT TARA",
+            "Cislo": "C 3002"
+      },
+      "C_3002a": {
+            "Budova": "C",
+            "Patro": "3NP",
+            "Nazev": "SOCIÁLNÍ ZAŘÍZENÍ",
+            "Cislo": "C 3002a"
+      },
+      "C_3003a": {
+            "Budova": "C",
+            "Patro": "3NP",
+            "Nazev": "SOCIÁLNÍ ZAŘÍZENÍ",
+            "Cislo": "C 3003a"
+      },
+      "C_3007b": {
+            "Budova": "C",
+            "Patro": "3NP",
+            "Nazev": "GAMAKAMERA",
+            "Cislo": "C 3007b"
+      },
+      "D_2002": {
+            "Budova": "D",
+            "Patro": "2NP",
+            "Nazev": "UMÝVÁRNA",
+            "Cislo": "D 2002"
+      },
+      "D_2002a": {
+            "Budova": "D",
+            "Patro": "2NP",
+            "Nazev": "WC",
+            "Cislo": "D 2002a"
+      },
+      "D_2002b": {
+            "Budova": "D",
+            "Patro": "2NP",
+            "Nazev": "WC",
+            "Cislo": "D 2002b"
+      },
+      "D_2003": {
+            "Budova": "D",
+            "Patro": "2NP",
+            "Nazev": "UMÝVÁRNA",
+            "Cislo": "D 2003"
+      },
+      "D_2003a": {
+            "Budova": "D",
+            "Patro": "2NP",
+            "Nazev": "WC",
+            "Cislo": "D 2003a"
+      },
+      "D_2003b": {
+            "Budova": "D",
+            "Patro": "2NP",
+            "Nazev": "WC",
+            "Cislo": "D 2003b"
+      },
+      "D_2004": {
+            "Budova": "D",
+            "Patro": "2NP",
+            "Nazev": "ÚKLID",
+            "Cislo": "D 2004"
+      },
+      "D_2004a": {
+            "Budova": "D",
+            "Patro": "2NP",
+            "Nazev": "ÚKLID",
+            "Cislo": "D 2004a"
+      },
+      "D_2005": {
+            "Budova": "D",
+            "Patro": "2NP",
+            "Nazev": "KANCELÁŘ",
+            "Cislo": "D 2005"
+      }
+}
