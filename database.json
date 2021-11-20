@@ -1,6 +1,5 @@
 {
     "point_types": [
-        "lobby",
         "corridor",
         "door",
         "elevator"
@@ -18,7 +17,8 @@
                 0,
                 2
             ],
-            "type": 0
+            "type": 0,
+            "description": "Main entrance"
         },
         {
             "id": 10,
@@ -27,7 +27,8 @@
                 10,
                 2
             ],
-            "type": 1
+            "type": 1,
+            "description": "Behind the reception"
         },
         {
             "id": 11,
@@ -63,7 +64,7 @@
             "from": 0,
             "to": 1,
             "mobility": 0,
-            "message": "k pavilonu B"
+            "description": "k pavilonu B"
         }
     ]
 }
