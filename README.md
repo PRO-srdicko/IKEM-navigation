@@ -12,10 +12,10 @@ type: from `point_types`
 description: 
 
 #### points types
-corridor: walkthrough points, should not be targets
-door: should be targets
+0: corridor: walkthrough points, should not be targets
+1: door: should be targets
     "di-base"
-elevator:
+2: elevator:
     "floor"
 
 ### paths
@@ -26,5 +26,9 @@ mobility: from `mobility_types`
 message: a text description of the directions
 
 #### mobility types
-
+    "mobility_types": [
+        "no_restrictions",
+        "steep_incline",
+        "stairs"
+    ],
 
