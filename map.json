@@ -1,0 +1,41 @@
+{
+    "types": [
+        "lobby",
+        "corridor",
+        "door",
+        "elevator"
+    ],
+
+    "points": [
+        {
+            "id": 0,
+            "coords": [0, 0, 2],
+            "type": 0
+        },{
+            "id": 10,
+            "coords": [0, 10, 2],
+            "type": 1
+        },{
+            "id": 11,
+            "coords": [10, 10, 2],
+            "type": 2
+        },{
+            "id": 12,
+            "coords": [20, 10, 2],
+            "type": 1
+        },{
+            "id": 13,
+            "coords": [20, 15, 2],
+            "type": 3
+        }
+    ],
+
+    "paths": [
+        {
+            "id": 0,
+            "from": 0,
+            "to": 1,
+            "mobility": 0
+        }
+    ]
+}
