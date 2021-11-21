@@ -2,20 +2,10 @@ import numpy as np
 from copy import copy
 
 
-def compute_angle(path1, path2):
-    v1 = compute_vector(path1)
-    v2 = compute_vector(path2)
-    return np.degrees(np.arctan2(v2[1], v2[0]) - np.arctan2(v1[1], v1[0]))
-
-
-def compute_vector(path):
-    vector = np.array(points[path["to"]]['coords'][:2]) - \
-        np.array(points[path["from"]]['coords'][:2])
-    return vector
-
-
 angles = {
-    range(-180, -160): "behind you",
+    # Take a "" turn
+    'turn': {
+    range(-180, -160): "very sharp left",
     range(-160, -120): "sharp left",
     range(-120, -60): "left",
     range(-60, -20): "slight left",
@@ -23,14 +13,29 @@ angles = {
     range(20, 60): "slight right",
     range(60, 120): "right",
     range(120, 160): "sharp right",
-    range(160, 181): "behind you",
+    range(160, 180): "very sharp right",
+    },
+    # Look ""
+    'look': {
+    range(-180, -160): "behind you on your left",
+    range(-160, -120): "sharp left",
+    range(-120, -60): "left",
+    range(-60, -20): "slight left",
+    range(-20, 20): "in front of you",
+    range(20, 60): "slight right",
+    range(60, 120): "right",
+    range(120, 160): "sharp right",
+    range(160, 180): "behind you on your right",
+    }
 }
 
 
-def angle_to_text(angle):
-    for angle_range in angles:
-        if angle in angle_range:
-            return angles[angle_range]
+def angle_to_text(angle, type='turn'):
+    for angle_range in angles[type]:
+        if np.floor(angle) in angle_range:
+            print(angle_range)
+            print(angles[type][angle_range])
+            return angles[type][angle_range]
 
 # points = load_points()
 # [] to {id: point}
@@ -39,6 +44,7 @@ def angle_to_text(angle):
 # Validate
 # Each door has at least 1 corridor neihbour
 # If door has more than 1 Corridor neihbour, paths to Cs, must have Descriptions
+# No x->x lines 
 
 
 points = {0: {'id': 0, 'coords': [0, 0, 2], 'type': 0, 'description': "Test"}, 10: {'id': 10, 'coords': [
@@ -69,14 +75,14 @@ def is_anchor(point):
 
 
 def resolve_last(path):
-    instruction = f"Look {angle_to_text(path['angle'])} and"
+    instruction = f"Look {angle_to_text(path['angle'], 'look')} and"
     if len(path["description"]) > 0:
         instruction += f" towards {path['description']}"
     instruction += " you'll find"
-    if len(points[path['to']]['description']) > 0:
-        instruction += f" {points[path['to']]['description']}."
+    if len(path['to']['description']) > 0:
+        instruction += f" {path['to']['description']}."
     else:
-        instruction += " it."
+        instruction += " your destination."
     return instruction
 
 
@@ -87,8 +93,8 @@ def resolve_first(path):
     Start by having the door behind you.
     """
     instruction = ""
-    from_point = points[path['from']]
-    to_point = points[path["to"]]
+    from_point = path['from']
+    to_point = path["to"]
     if len(from_point['description']) > 0:
         instruction += f"From the {from_point['description']} start by"
     else:
@@ -129,39 +135,42 @@ def resolve_inter(paths):
     instructions = []
 
     for i, path in enumerate(paths):
-        if not is_anchor(path) and not is_turn(path):
+        if not is_anchor(path['to']) and not is_turn(path):
             # maybe some counters should be here
             continue
         instruction = ""
-        from_point = points[path['from']]
-        to_point = points[path["to"]]
+        from_point = path['from']
+        to_point = path["to"]
         if is_turn(path):
-            instruction += f"Take a {angle_to_text(path['angle'])} turn"
+            instruction += f"Take a {angle_to_text(path['angle'], 'turn')} turn"
         else:
             instruction += f"Continue"
         if len(path['description']) > 0:
             instruction += f" through {path['description']}"
         else:
             instruction += ""
-        # theres a named corridor
-        if to_point['type'] == 0:
-            assert len(to_point['description']) > 0
-            instruction += f" towards {to_point['description']}."
-        # Theres a named door that is not final
-        if to_point['type'] == 1:
-            assert len(to_point['description']) > 0
-            instruction += f" through door {to_point['description']}."
-        # Theres an elevator
-        if to_point['type'] == 2:
-            # and we go from elevator
-            if from_point['type'] == 2:
-                instruction += f" with an elevator to floor {from_point['level']}."
-            else:
-                instruction += f" taking the elevator "
-                if len(to_point['description']) > 0:
-                    instruction += f" {to_point['description']}."
+        if is_anchor(to_point):
+            # theres a named corridor
+            if to_point['type'] == 0:
+                assert len(to_point['description']) > 0
+                instruction += f" towards {to_point['description']}."
+            # Theres a named door that is not final
+            if to_point['type'] == 1:
+                assert len(to_point['description']) > 0
+                instruction += f" through door {to_point['description']}."
+            # Theres an elevator
+            if to_point['type'] == 2:
+                # and we go from elevator
+                if from_point['type'] == 2:
+                    instruction += f" with an elevator to floor {from_point['level']}."
                 else:
-                    instruction += f" {to_point['number']}."
+                    instruction += f" taking the elevator "
+                    if len(to_point['description']) > 0:
+                        instruction += f" {to_point['description']}."
+                    else:
+                        instruction += f" {to_point['number']}."
+        else:
+            instruction += "."
         instructions.append(instruction)
 
     return instructions
@@ -193,13 +202,11 @@ if __name__ == "__main__":
         {
             "id": 0,
             "from": 0,
-            "from_type": 0,
             "to": 10,
-            "to_type": 1,
             "angle": None,
             "length": 10,
             "mobility": 0,
-            "message": "k pavilonu B"
+            "description": "k pavilonu B"
         },
         {
             "id": 1,
@@ -210,4 +217,4 @@ if __name__ == "__main__":
         }
     ]
 
-    print(construct_instructions(paths, points))
+    print(construct_instructions(paths))
