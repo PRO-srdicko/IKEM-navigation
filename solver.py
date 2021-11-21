@@ -87,7 +87,7 @@ def findPath(loadedMap, start, end):
         if found:
             pathPoints.reverse()
             pathLines.reverse()
-            
+
         print("Path:", found)
         print("PathPoints:", pathPoints)
         print("PathLines:", pathLines)
@@ -153,7 +153,3 @@ if __name__ == '__main__':
     instructions = construct_instructions(paths)
     print(instructions)
 
-    exit()
-
-    for x in range(150):
-        findPath(loadedMap, 5, x)

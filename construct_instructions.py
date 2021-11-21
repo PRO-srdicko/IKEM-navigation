@@ -134,17 +134,23 @@ def resolve_first(path):
 def resolve_inter(paths):
     instructions = []
 
+    m_from_anchor = 0
     for i, path in enumerate(paths):
         if not is_anchor(path['to']) and not is_turn(path):
-            # maybe some counters should be here
+            m_from_anchor += path['length'] / 500
             continue
+        m_from_anchor = 0
         instruction = ""
         from_point = path['from']
         to_point = path["to"]
-        if is_turn(path):
-            instruction += f"Take a {angle_to_text(path['angle'], 'turn')} turn"
+        if m_from_anchor < 5:
+            instruction += "Almost immediately" if np.random.rand() > 0.5 else "Right away"
         else:
-            instruction += f"Continue"
+            instruction += f"After about {m_from_anchor} meters"
+        if is_turn(path):
+            instruction += f" take a {angle_to_text(path['angle'], 'turn')} turn"
+        else:
+            instruction += f" continue"
         if len(path['description']) > 0:
             instruction += f" through {path['description']}"
         else:
@@ -198,23 +204,4 @@ def construct_instructions(paths):
 
 
 if __name__ == "__main__":
-    paths = [
-        {
-            "id": 0,
-            "from": 0,
-            "to": 10,
-            "angle": None,
-            "length": 10,
-            "mobility": 0,
-            "description": "k pavilonu B"
-        },
-        {
-            "id": 1,
-            "from": 10,
-            "to": 11,
-            "mobility": 0,
-            "message": "k pavilonu A"
-        }
-    ]
-
-    print(construct_instructions(paths))
+    pass
