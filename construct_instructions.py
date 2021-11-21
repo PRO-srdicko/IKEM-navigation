@@ -1,5 +1,4 @@
 import numpy as np
-from copy import copy
 
 
 angles = {
@@ -33,8 +32,6 @@ angles = {
 def angle_to_text(angle, type='turn'):
     for angle_range in angles[type]:
         if np.floor(angle) in angle_range:
-            print(angle_range)
-            print(angles[type][angle_range])
             return angles[type][angle_range]
 
 # points = load_points()

@@ -148,7 +148,6 @@ if __name__ == '__main__':
     point_ids, line_ids = findPath(loadedMap, 36, 27)
 
     paths = lines_to_paths(loadedMap, point_ids, line_ids)
-    print(paths)
 
     instructions = construct_instructions(paths)
     print(instructions)
